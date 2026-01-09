@@ -1,0 +1,16 @@
+[Unit]
+Description=Zerodha Live Bot v2
+After=network.target
+
+
+User=root
+WorkingDirectory=/root/zerodha_live_bot
+ExecStart=/root/zerodha_live_bot/venv/bin/python bot/main.py
+Restart=always
+RestartSec=10
+EnvironmentFile=/root/zerodha_live_bot/.env
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
+
